@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AchieveActivity"
+    android:id="@+id/AchieveActivityLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_nim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지난 달"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:fontFamily="@font/dunggeunmo"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="35dp"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신은"
+            android:textSize="60dp"
+            android:gravity="center_vertical|right"
+            android:fontFamily="@font/dunggeunmo"
+            android:textColor="#000000"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="25dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="3.1"
+        android:paddingTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.9">
+
+        <TextView
+            android:id="@+id/lastMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/dunggeunmo"
+            android:gravity="center"
+            android:text="지난 달:"
+            android:textColor="#000000"
+            android:textSize="27dp"
+            android:layout_marginLeft="33dp"/>
+
+        <TextView
+            android:id="@+id/lastMonthPrice"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/dunggeunmo"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="지난 달의 수입 지출"
+            android:textColor="#000000"
+            android:textSize="27dp"
+            android:layout_marginLeft="8dp"
+            android:singleLine="true"
+            android:paddingRight="10dp"/>
+
+        <!--<Button
+            android:id="@+id/btnAchieve"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_style"
+            android:layout_marginLeft="160dp"
+            android:text="업적" />-->
+    </LinearLayout>
+
+</LinearLayout>

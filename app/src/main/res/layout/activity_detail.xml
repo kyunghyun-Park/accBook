@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#Fcdd93">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="492dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/detail"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_detail"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/dunggeunmo" />
+
+        <TextView
+            android:id="@+id/txtTotal"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:fontFamily="@font/dunggeunmo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="TextView" />
+
+        <View
+            android:id="@+id/view"
+            android:layerType="software"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/line"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView2"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"
+            android:paddingBottom="5dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
