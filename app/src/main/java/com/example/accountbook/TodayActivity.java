@@ -1,5 +1,6 @@
 package com.example.accountbook;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -99,6 +100,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
         adapter2.notifyDataSetChanged();
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,6 +143,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    //중요도 HIGH 설정 시 상단에 팝업이 자동으로 생성됨
                     int importance = NotificationManager.IMPORTANCE_HIGH;
                     NotificationChannel mChannel = new NotificationChannel(channelId, channelName, importance);
                     notifManager.createNotificationChannel(mChannel);

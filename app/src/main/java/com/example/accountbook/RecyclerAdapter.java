@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
 
-    // adpater에 들어갈 list
+    // adapter에 들어갈 list
     private ArrayList<TodayData> listData = new ArrayList<>();
     private Context context;
 

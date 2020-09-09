@@ -90,7 +90,8 @@ public class DetailActivity extends AppCompatActivity {
         // 리사이클러뷰
         mDb = openOrCreateDatabase("today.db", MODE_PRIVATE, null);
         mDb = mSQLiteHelper.getReadableDatabase();
-        mCursor = mDb.rawQuery("SELECT usage, SUM(price) detailprice FROM " + SQLiteHelper.TABLE_NAME + " WHERE time LIKE '" + myData + "%' GROUP BY usage ORDER BY SUM(price) ASC;", null);
+        mCursor = mDb.rawQuery("SELECT usage, SUM(price) detailprice FROM " + SQLiteHelper.TABLE_NAME
+                + " WHERE time LIKE '" + myData + "%' GROUP BY usage ORDER BY SUM(price) ASC;", null);
         for (mCursor.moveToFirst(); !mCursor.isAfterLast(); mCursor.moveToNext()) {
             // 각 List의 값들을 data 객체에 set
             TodayData data2 = new TodayData();

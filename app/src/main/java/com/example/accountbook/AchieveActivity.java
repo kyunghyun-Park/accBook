@@ -1,5 +1,6 @@
 package com.example.accountbook;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -41,6 +42,7 @@ public class AchieveActivity extends AppCompatActivity {
 
     private LinearLayout test3;
 
+    @SuppressLint({"SetTextI18n", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,7 +193,6 @@ public class AchieveActivity extends AppCompatActivity {
 
         if (imp > spd) { //수입이 지출보다 크면
             imageview.setImageResource(R.drawable.rich2);
-
         } else if (imp == spd) {
             imageview.setImageResource(R.drawable.normal);
         } else {

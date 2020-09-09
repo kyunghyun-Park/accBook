@@ -21,9 +21,9 @@ import java.util.StringTokenizer;
 public class NotificationListener extends NotificationListenerService {
 
     static TextView tv, tv2, tv3;
-    String stralarm;
-    Notification ntf;
-    int i = 0;
+//    String stralarm;
+//    Notification ntf;
+//    int i = 0;
     final String nametitle = "카카오페이";
 
     private static final String TAG = NotificationListener.class.getSimpleName();
