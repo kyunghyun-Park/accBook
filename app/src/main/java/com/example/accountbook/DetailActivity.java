@@ -81,7 +81,6 @@ public class DetailActivity extends AppCompatActivity {
                 } else {
                     dePriceString = myFormatter.format(dePrice);
                 }
-
                 txtTotal.setText(dePriceString);
             }
         }
