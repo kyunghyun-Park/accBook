@@ -30,11 +30,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -77,7 +74,6 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
     @Override
     public void onMethodCallback(String price, String time, String place, String usage) {
-        // get your value here
         //Toast.makeText(this, place + usage, Toast.LENGTH_LONG);
         Log.d("메인토스트", "가격" + price + "시간" + time + "장소" + place + "용도" + usage);
 
@@ -96,7 +92,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
         // 디테일 리사이클러뷰 표시
         adapter2.updateData();
-        getData2();
+        getDetailData();
         adapter2.notifyDataSetChanged();
     }
 
@@ -234,7 +230,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
         init();
         getData();
-        getData2();
+        getDetailData();
         setTotal();
 
         //총! 디테일 열고 펼치는 애니메이션
@@ -298,7 +294,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
         init();
         getData();
-        getData2();
+        getDetailData();
         setTotal();
 
         //총! 디테일 열고 펼치는 애니메이션
@@ -409,6 +405,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
         }*/
     }
 
+    //클릭 애니메
     public class ResizeAnimation extends Animation {
         private int startHeight;
         private int deltaHeight; // distance between start and end height
@@ -480,7 +477,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
         adapter.updateData();
         getData();
         adapter.notifyDataSetChanged();
-        getData2();
+        getDetailData();
         setTotal();
     }
 
@@ -531,7 +528,7 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
         mDb.close();
     }
 
-    public void getData2() {
+    public void getDetailData() {
         // 디테일 리사이클러뷰 표시
         mDb = openOrCreateDatabase("today.db", MODE_PRIVATE, null);
         mDb = mSQLiteHelper.getReadableDatabase();
@@ -542,7 +539,6 @@ public class TodayActivity extends AppCompatActivity implements RecyclerAdapter.
 
             String dusage = mCursor.getString(mCursor.getColumnIndex("usage"));
             String dprice = mCursor.getString(mCursor.getColumnIndex("detailprice"));
-
 
             deUsage = dusage + "";
             if (TextUtils.equals(deUsage, null + "")) {

@@ -9,7 +9,6 @@
     </style>
 
     <!-- For Splash Screen -->
-
     <style name="SplashTheme" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

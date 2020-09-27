@@ -24,10 +24,10 @@ public class DetailActivity extends AppCompatActivity {
     SQLiteDatabase mDb;
     Cursor mCursor;
 
-    // 포맷
+    //포맷
     private DecimalFormat myFormatter = new DecimalFormat("###,###원");
-    private int showMoney;
-    private String money;
+//    private int showMoney;
+//    private String money;
 
     private String deUsage;
     private String dePriceString;

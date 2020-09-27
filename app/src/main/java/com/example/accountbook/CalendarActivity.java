@@ -5,13 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.accountbook.decorators.OneDayDecorator;
 import com.example.accountbook.decorators.SaturdayDecorator;
@@ -23,10 +21,8 @@ import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class CalendarActivity extends AppCompatActivity {
@@ -112,14 +108,14 @@ public class CalendarActivity extends AppCompatActivity {
                 new OneDayDecorator());
 
         // 이번 달 지출 표시
-        mDb = openOrCreateDatabase("today.db", MODE_PRIVATE, null);
-        mDb = mSQLiteHelper.getReadableDatabase();
-        //String[] columns = {mSQLiteHelper.COLUMN_PRICE, mSQLiteHelper.COLUMN_USAGE, mSQLiteHelper.COLUMN_PLACE, mSQLiteHelper.COLUMN_DATE};
-        //Cursor cursor = mDb.query(mSQLiteHelper.TABLE_NAME, columns, null, null, null, null, null);
-        mCursor = mDb.rawQuery("SELECT SUM(price) totalprice FROM " + SQLiteHelper.TABLE_NAME + " WHERE time LIKE '" + currentMonth + "%' AND price LIKE '-%'", null);
-        for (mCursor.moveToFirst(); !mCursor.isAfterLast(); mCursor.moveToNext()) {
-            // 각 List의 값들을 data 객체에 set
-            TodayData data = new TodayData();
+            mDb = openOrCreateDatabase("today.db", MODE_PRIVATE, null);
+            mDb = mSQLiteHelper.getReadableDatabase();
+            //String[] columns = {mSQLiteHelper.COLUMN_PRICE, mSQLiteHelper.COLUMN_USAGE, mSQLiteHelper.COLUMN_PLACE, mSQLiteHelper.COLUMN_DATE};
+            //Cursor cursor = mDb.query(mSQLiteHelper.TABLE_NAME, columns, null, null, null, null, null);
+            mCursor = mDb.rawQuery("SELECT SUM(price) totalprice FROM " + SQLiteHelper.TABLE_NAME + " WHERE time LIKE '" + currentMonth + "%' AND price LIKE '-%'", null);
+            for (mCursor.moveToFirst(); !mCursor.isAfterLast(); mCursor.moveToNext()) {
+                // 각 List의 값들을 data 객체에 set
+                TodayData data = new TodayData();
 
             String rprice = mCursor.getString(mCursor.getColumnIndex("totalprice"));
 

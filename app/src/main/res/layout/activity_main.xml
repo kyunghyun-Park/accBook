@@ -11,6 +11,7 @@
     <!--오늘의 총 금액-->
 
     <!--하루 내 출입금 목록-->
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
